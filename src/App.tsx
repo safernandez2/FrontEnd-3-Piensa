@@ -8,6 +8,7 @@ import Preguntas from "./preguntas/Preguntas";
 import Guia from "./guia/Guia";
 import Inicio from "./inicio/Inicio";
 import Contactos from "./contactos/Contactos";
+import Usuario from "./usuario/Usuario"
 
 
 
@@ -19,6 +20,8 @@ function App() {
       <Route path="/inicio" element={<Inicio />} />   
       <Route path="/guia" element={<Guia />} />   
         <Route path="/preguntas" element={<Preguntas />} /> 
+        <Route path="/usuario" element={<Usuario />} /> 
+
         <Route path="/contactos" element={<Contactos />} />     
       </Routes>
     </BrowserRouter>   

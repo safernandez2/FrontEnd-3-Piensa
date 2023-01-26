@@ -29,6 +29,14 @@ return (
             </span>
         </li>
 
+         <li className="liStev">
+        <span>
+            <NavLink to="/usuario">
+                Usuario
+            </NavLink>
+            </span>
+        </li>
+
         <li className="liStev">
         <span>
             <NavLink to="/contactos">
