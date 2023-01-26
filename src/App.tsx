@@ -8,6 +8,7 @@ import Preguntas from "./preguntas/Preguntas";
 import Guia from "./guia/Guia";
 import Inicio from "./inicio/Inicio";
 import Contactos from "./contactos/Contactos";
+import Evaluacion from "./evaluaciones/Evaluacion";
 
 
 
@@ -19,7 +20,8 @@ function App() {
       <Route path="/inicio" element={<Inicio />} />   
       <Route path="/guia" element={<Guia />} />   
         <Route path="/preguntas" element={<Preguntas />} /> 
-        <Route path="/contactos" element={<Contactos />} />     
+        <Route path="/contactos" element={<Contactos />} />
+        <Route path="/evaluacion" element={<Evaluacion/>} />      
       </Routes>
     </BrowserRouter>   
   );
