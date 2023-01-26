@@ -72,7 +72,7 @@ const showPropsConfirm = () => {
 const Evaluacion3: React.FC = () => (
   <Space wrap>
     <Button onClick={showDeleteConfirm} type="dashed">
-      Delete
+      Eliminar
     </Button>
   </Space>
 );

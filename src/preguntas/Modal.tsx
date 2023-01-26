@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Modal } from 'antd';
-import Formulario from './formulario';
+import Formu from './Formulario';
 
-const Evaluacion2: React.FC = () => {
+const Modals: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
@@ -22,11 +22,11 @@ const Evaluacion2: React.FC = () => {
       <Button type="primary" onClick={showModal}>
         Editar
       </Button>
-      <Modal title="Editar evaluacion" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-        <Formulario/>      
+      <Modal title="Editar pregunta" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+        <Formu/>
       </Modal>
     </>
   );
 };
 
-export default Evaluacion2;
+export default Modals;
