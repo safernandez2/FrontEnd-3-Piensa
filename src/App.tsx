@@ -9,6 +9,7 @@ import Guia from "./guia/Guia";
 import Inicio from "./inicio/Inicio";
 import Contactos from "./contactos/Contactos";
 import Evaluacion from "./evaluaciones/Evaluacion";
+import Usuario from "./usuario/Usuario"
 
 
 
@@ -19,6 +20,7 @@ function App() {
       <Routes>
       <Route path="/inicio" element={<Inicio />} />   
       <Route path="/guia" element={<Guia />} />   
+      <Route path="/usuario" element={<Usuario />} /> 
         <Route path="/preguntas" element={<Preguntas />} /> 
         <Route path="/contactos" element={<Contactos />} />
         <Route path="/evaluacion" element={<Evaluacion/>} />      

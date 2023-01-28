@@ -23,6 +23,14 @@ return (
 
         <li className="liStev">
         <span>
+            <NavLink to="/usuario">
+                Usuarios
+            </NavLink>
+            </span>
+        </li>
+
+        <li className="liStev">
+        <span>
             <NavLink to="/preguntas">
                 Preguntas
             </NavLink>

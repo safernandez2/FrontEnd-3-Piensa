@@ -3,13 +3,18 @@ import { Space, Table, Tag } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import Modals from "./Modal"
 import Delete from "./Botondelete"
+import Secondmodal from './Modal2';
 
 interface DataType {
   key: string;
-  name: string;
-  age: number;
-  address: string;
-  tags: string[];
+  id: string;
+  descripcion: string;
+  opcionone: string;
+  opciontwo: string;
+  opcionthree: string;
+  respuesta: string;
+  tipo: string;
+
 }
 
 const columns: ColumnsType<DataType> = [
@@ -21,33 +26,33 @@ const columns: ColumnsType<DataType> = [
   },
   {
     title: 'Descripcion',
-    dataIndex: 'age',
-    key: 'age',
+    dataIndex: 'descripcion',
+    key: 'descripcion',
   },
   {
     title: 'Opcion uno',
-    dataIndex: 'address',
-    key: 'address',
+    dataIndex: 'opcionone',
+    key: 'opcionone',
   },
   {
     title: 'Opcion dos',
-    dataIndex: 'address',
-    key: 'address',
+    dataIndex: 'opciontwo',
+    key: 'opciontwo',
   },
   {
     title: 'Opcion tres',
-    dataIndex: 'address',
-    key: 'address',
+    dataIndex: 'opcionthree',
+    key: 'opcionthree',
   },
   {
     title: 'Respuesta',
-    dataIndex: 'address',
-    key: 'address',
+    dataIndex: 'respuesta',
+    key: 'respuesta',
   },
   {
     title: 'Tipo',
-    key: 'tags',
-    dataIndex: 'tags',
+    key: 'tipo',
+    dataIndex: 'tipo',
    
   },
   {
@@ -69,27 +74,69 @@ const columns: ColumnsType<DataType> = [
 const data: DataType[] = [
   {
     key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer'],
+    id: '1',
+    descripcion: "¿Que es la catenaria activa?",
+    opcionone: 'Es un cable aereo que permanece enegizado',
+    opciontwo: 'Es un cable subterraneo',
+    opcionthree: 'Es una señal',
+    respuesta: 'Es un cable aereo que permanece enegizado',
+    tipo: 'N',
   },
   {
     key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tags: ['loser'],
+    id: '2',
+    descripcion: "¿Que funcion cumple la prioridad tranviaria?",
+    opcionone: 'Prioridad de parar',
+    opciontwo: 'Prioridad de estacionamiento',
+    opcionthree: 'Prioridad de circulacion',
+    respuesta: 'Prioridad de circulacion',
+    tipo: 'N',
   },
   {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
+      key: '3',
+      id: '3',
+      descripcion: "¿Para que sirven los semaforos?",
+      opcionone: 'Para avisar cuando se acerca el tranvia',
+      opciontwo: 'Para que los autos pasen a toda velocidad',
+      opcionthree: 'Para que pasen los peatones',
+      respuesta: 'Para avisar cuando se acerca el tranvia',
+      tipo: 'N',
   },
+  {
+    key: '4',
+    id: '4',
+    descripcion: "¿Por que no debemos invadir rieles?",
+    opcionone: 'Porque dañamos las rieles',
+    opciontwo: 'Porque podemos causar un accidente',
+    opcionthree: 'Porque no esta permitido',
+    respuesta: 'Porque podemos causar un accidente',
+    tipo: 'N',
+},
+{
+  key: '5',
+  id: '5',
+  descripcion: "¿Que es la zona reticulada?",
+  opcionone: 'Es una señal en forma de rejilla dibujada sobre la calzada.',
+  opciontwo: 'Es un semaforo',
+  opcionthree: 'Es una parada',
+  respuesta: 'Es una señal en forma de rejilla dibujada sobre la calzada.',
+  tipo: 'N',
+},
+{
+  key: '6',
+  id: '6',
+  descripcion: "¿Para que es importante la velocidad maxima permitida?",
+  opcionone: 'Para conducir mejor',
+  opciontwo: 'Para ir mas rapido',
+  opcionthree: 'Para evitar accidentes',
+  respuesta: 'Para evitar accidentes',
+  tipo: 'N',
+},
 ];
 
-const App: React.FC = () => <Table columns={columns} dataSource={data} />;
-
+const App: React.FC = () => 
+<>
+<Table columns={columns} dataSource={data} />;
+<Secondmodal/>
+</>
 export default App;
