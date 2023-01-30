@@ -37,6 +37,15 @@ return (
             </span>
         </li>
 
+        
+        <li className="liStev">
+        <span>
+            <NavLink to="/cuestionario">
+                Cuestionario
+            </NavLink>
+            </span>
+        </li>
+
         <li className="liStev">
         <span>
             <NavLink to="/evaluacion">

@@ -5,7 +5,7 @@ import Modals from "./Modal"
 import Delete from "./Botondelete"
 import Secondmodal from './Modal2';
 
-interface DataType {
+interface Preguntaspiensa {
   key: string;
   id: string;
   descripcion: string;
@@ -17,7 +17,7 @@ interface DataType {
 
 }
 
-const columns: ColumnsType<DataType> = [
+const columns: ColumnsType<Preguntaspiensa> = [
   {
     title: 'id',
     dataIndex: 'name',
@@ -71,7 +71,7 @@ const columns: ColumnsType<DataType> = [
   },
 ];
 
-const data: DataType[] = [
+const datapreguntas: Preguntaspiensa[] = [
   {
     key: '1',
     id: '1',
@@ -136,7 +136,7 @@ const data: DataType[] = [
 
 const App: React.FC = () => 
 <>
-<Table columns={columns} dataSource={data} />;
+<Table columns={columns} dataSource={datapreguntas} />;
 <Secondmodal/>
 </>
 export default App;

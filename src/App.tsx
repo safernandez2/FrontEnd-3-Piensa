@@ -9,7 +9,8 @@ import Guia from "./guia/Guia";
 import Inicio from "./inicio/Inicio";
 import Contactos from "./contactos/Contactos";
 import Evaluacion from "./evaluaciones/Evaluacion";
-import Usuario from "./usuario/Usuario"
+import Usuario from "./usuario/Usuario";
+import Cuestionario from "./cuestionario/Cuestionario";
 
 
 
@@ -22,6 +23,8 @@ function App() {
       <Route path="/guia" element={<Guia />} />   
       <Route path="/usuario" element={<Usuario />} /> 
         <Route path="/preguntas" element={<Preguntas />} /> 
+        <Route path="/cuestionario" element={<Cuestionario />} /> 
+
         <Route path="/contactos" element={<Contactos />} />
         <Route path="/evaluacion" element={<Evaluacion/>} />      
       </Routes>
