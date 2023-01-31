@@ -20,8 +20,8 @@ interface Preguntaspiensa {
 const columns: ColumnsType<Preguntaspiensa> = [
   {
     title: 'id',
-    dataIndex: 'name',
-    key: 'name',
+    dataIndex: 'id',
+    key: 'id',
     render: (text) => <a>{text}</a>,
   },
   {

@@ -76,7 +76,7 @@ const data: DataType[] = [
     id: '4',
     nombre:  "Luisa",
     apellido: 'Quito',
-    edad: 10,
+    edad: 11,
   },
   {
     key: '5',
@@ -90,23 +90,8 @@ const data: DataType[] = [
     id: '6',
     nombre:  "Antony",
     apellido: 'Ezpinoza',
-    edad: 10,
+    edad: 9,
   },
-  {
-    key: '7',
-    id: '7',
-    nombre:  "Camila",
-    apellido: 'Torres',
-    edad: 10,
-  },
-  {
-    key: '8',
-    id: '8',
-    nombre:  "Lupe",
-    apellido: 'Aguilar',
-    edad: 10,
-  },
-
 ];
 
 const App: React.FC = () => 

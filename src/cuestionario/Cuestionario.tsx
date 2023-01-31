@@ -5,6 +5,7 @@ import Opciones from "./Opciones"
 import Opciones2 from "./Opciones2"
 import Opciones3 from "./Opciones3"
 import Botonsave from "./Botonguardar"
+import Selectedusuario from "./Cardusers"
 
 
 const { Title, Paragraph, Text, Link } = Typography;
@@ -12,7 +13,9 @@ const { Title, Paragraph, Text, Link } = Typography;
 
 
 const App: React.FC = () => (
+
   <>
+  <Selectedusuario/>
   <Typography>
     <Title>Cuestionario</Title>
     <hr/>
