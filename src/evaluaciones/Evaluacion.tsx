@@ -45,7 +45,6 @@ const columns: ColumnsType<DataType> = [
     key: 'action',
     render: (_, record) => (
       <Space size="middle">
-        <a><Evaluacion2/></a>
         <a><Evaluacion3/></a>
       </Space>
     ),
@@ -97,8 +96,9 @@ const data: DataType[] = [
 
 const App: React.FC = () =>
 <>
- <Table columns={columns} dataSource={data} />;
 <Modal2/>
+
+ <Table columns={columns} dataSource={data} />;
  </>
 
 export default App;

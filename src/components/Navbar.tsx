@@ -13,13 +13,7 @@ return (
             </span>
         </li>
 
-        <li className="liStev">
-        <span>
-            <NavLink to="/guia">
-                Guia
-            </NavLink>
-            </span>
-        </li>
+      
 
         <li className="liStev">
         <span>

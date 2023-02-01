@@ -136,7 +136,8 @@ const datapreguntas: Preguntaspiensa[] = [
 
 const App: React.FC = () => 
 <>
-<Table columns={columns} dataSource={datapreguntas} />;
 <Secondmodal/>
+
+<Table columns={columns} dataSource={datapreguntas} />;
 </>
 export default App;

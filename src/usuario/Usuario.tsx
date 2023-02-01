@@ -96,8 +96,9 @@ const data: DataType[] = [
 
 const App: React.FC = () => 
 <>
-<Table columns={columns} dataSource={data} />;
 <Secondmodal/>
+
+<Table columns={columns} dataSource={data} />;
 </>
 
 
