@@ -35,7 +35,7 @@ const columns: ColumnsType<DataType> = [
     title: 'Edad',
     key: 'edad',
     dataIndex: 'edad',
-    
+
   },
   {
     title: 'Action',
@@ -94,12 +94,12 @@ const data: DataType[] = [
   },
 ];
 
-const App: React.FC = () => 
-<>
-<Secondmodal/>
+*/
 
-<Table columns={columns} dataSource={data} />;
+const App: React.FC = () =>
+<>
+TablaDato;
 </>
 
 
-export default App;*/
+export default App;

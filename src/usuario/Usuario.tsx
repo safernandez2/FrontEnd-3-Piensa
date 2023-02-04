@@ -11,21 +11,18 @@ import DataTable from 'react-data-table-component';
 
 
 interface UsuarioData {
-  results: Array<{
-    id: number;
+// TODO: Aca se entroba result porque el endpoint anterior tenia el objeto dentro de un objeto llamado 'result' en su caso pude ser destinto
+    id: number | string;
     nombre: string;
     apellido:string
     edad:number
-}>;
 }
 
 
-const columns: ColumnsType<UsuarioData> = [ 
-  
-  
-  {
+const columns: ColumnsType<UsuarioData> = [
+    {
     title: 'id',
-    dataIndex:,
+    dataIndex:'id',
     key: 'id',
   },
   {
@@ -42,7 +39,6 @@ const columns: ColumnsType<UsuarioData> = [
     title: 'Edad',
     key: 'edad',
     dataIndex: 'edad',
-    
   },
   {
     title: 'Action',
@@ -57,45 +53,50 @@ const columns: ColumnsType<UsuarioData> = [
 ];
 
 
-/*const data: UsuarioData[] = [
-  
-  {
-    id: 1,
-    nombre: "Jose",
-  },
-  {
-    id: 2,
-    apellido: 'Calle',
-  },
-  {
-    id: 3,
-    nombre:  "Alex",
-    apellido: 'Torres',
-    edad: 10,
-  },
-  {
-    id: 4,
-    nombre:  "Luisa",
-    apellido: 'Quito',
-    edad: 11,
-  },
- 
-];
+// const data: UsuarioData[] = [
+//   {
+//     id: '1',
+//     nombre: 'John Brown',
+//     edad: 32,
+//     apellido: 'New York No. 1 Lake Park',
+//   },
+//   {
+//     id: '2',
+//     nombre: 'John Brown',
+//     edad: 32,
+//     apellido: 'New York No. 1 Lake Park',
+//   },
+//   {
+//     id: '3',
+//     nombre: 'John Brown',
+//     edad: 32,
+//     apellido: 'New York No. 1 Lake Park',
+//   },
+//   {
+//     id: '4',
+//     nombre: 'John Brown',
+//     edad: 32,
+//     apellido: 'New York No. 1 Lake Park',
+//   },
+//
+// ];
 
 
-*/
+
 const Usuario: React.FC = () => {
-  const { data, error } = useSWR<UsuarioData>(tableUsuario, fetchApiPiensa, {
+
+
+
+  const { data, error } = useSWR<UsuarioData[]>(tableUsuario, fetchApiPiensa, {
     suspense: false,
 });
-  
 
-   return(  
+
+   return(
   <>
    <Secondmodal/>
-   {data?.results.map((usuario) => (
-  <Table columns={columns}    key={usuario.id} key={usuario.nombre} key={usuario.apellido}  key={usuario.edad}></Table>/>
-  ))}
+{/*TODO: El componente Table no necesta de map para mostrar los datos*/}
+  <Table columns={columns} dataSource={data} ></Table>
 
   </>
 
