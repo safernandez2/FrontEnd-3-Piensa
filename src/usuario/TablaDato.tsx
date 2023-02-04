@@ -1,31 +1,24 @@
-import React, {useState, useEffect} from 'react';
+/*
+import React from 'react';
 import { Space, Table, Tag } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import Moda from './Modal'
 import Delet from './BotonDelete';
 import Secondmodal from './Modal2';
 import useSWR from 'swr';
-import {fetchApiPiensa, tableUsuario} from "../service/apiPiensa";
-import DataTable from 'react-data-table-component';
 
 
-
-interface UsuarioData {
-  results: Array<{
-    id: number;
-    nombre: string;
-    apellido:string
-    edad:number
-}>;
+type DataType= {
+  nombre: string,
+  apellido: string,
+  edad: number
 }
 
 
-const columns: ColumnsType<UsuarioData> = [ 
-  
-  
+const columns: ColumnsType<DataType> = [
   {
     title: 'id',
-    dataIndex:,
+    dataIndex: 'id',
     key: 'id',
   },
   {
@@ -56,50 +49,57 @@ const columns: ColumnsType<UsuarioData> = [
   },
 ];
 
-
-/*const data: UsuarioData[] = [
-  
+const data: DataType[] = [
   {
-    id: 1,
+    key: '1',
+    id: '1',
     nombre: "Jose",
+    apellido: 'Perez',
+    edad: 12,
   },
   {
-    id: 2,
+    key: '2',
+    id: '2',
+    nombre: "Juan",
     apellido: 'Calle',
+    edad:8,
   },
   {
-    id: 3,
+    key: '3',
+    id: '3',
     nombre:  "Alex",
     apellido: 'Torres',
     edad: 10,
   },
   {
-    id: 4,
+    key: '4',
+    id: '4',
     nombre:  "Luisa",
     apellido: 'Quito',
     edad: 11,
   },
- 
+  {
+    key: '5',
+    id: '5',
+    nombre:  "Tatiana",
+    apellido: 'Farez',
+    edad: 10,
+  },
+  {
+    key: '6',
+    id: '6',
+    nombre:  "Antony",
+    apellido: 'Ezpinoza',
+    edad: 9,
+  },
 ];
 
+const App: React.FC = () => 
+<>
+<Secondmodal/>
 
-*/
-const Usuario: React.FC = () => {
-  const { data, error } = useSWR<UsuarioData>(tableUsuario, fetchApiPiensa, {
-    suspense: false,
-});
-  
+<Table columns={columns} dataSource={data} />;
+</>
 
-   return(  
-  <>
-   <Secondmodal/>
-   {data?.results.map((usuario) => (
-  <Table columns={columns}    key={usuario.id} key={usuario.nombre} key={usuario.apellido}  key={usuario.edad}></Table>/>
-  ))}
 
-  </>
-
- );
-};
-
-export default Usuario;
+export default App;*/
