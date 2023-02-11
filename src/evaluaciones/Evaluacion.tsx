@@ -3,17 +3,20 @@ import { Space, Table, Tag } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import Evaluacion2 from './Modal';
 import Evaluacion3 from './Delate';
-import Modal2 from  "./Modal2"
-interface DataType {
-  key: string;
-  id: string;
+import Modal2 from  "./Modal2";
+import useSWR from 'swr';
+import {fetchApiPiensa, tableEvaluacion} from "../service/apiPiensa";
+
+
+interface EvaluacionData {
+  id: number|string ;
   fecha: string;
   valido: string;
   error: string;
   usuario_id: string;
 }
 
-const columns: ColumnsType<DataType> = [
+const columns: ColumnsType<EvaluacionData> = [
   {
     title: 'Id',
     dataIndex: 'id',
@@ -37,8 +40,8 @@ const columns: ColumnsType<DataType> = [
   },
   {
     title: 'Usuario_id',
-    key: 'usuario_id',
-    dataIndex: 'usuario_id',
+    key: 'usuario',
+    dataIndex: 'usuario',
   },
   {
     title: 'Action',
@@ -51,7 +54,7 @@ const columns: ColumnsType<DataType> = [
   },
 ];
 
-const data: DataType[] = [
+/*const data: DataType[] = [
   {
     key: '1',
     id: '1',
@@ -93,12 +96,19 @@ const data: DataType[] = [
     usuario_id: "Alex Torres"
   },
 ];
+*/
+const App: React.FC = () =>{
 
-const App: React.FC = () =>
+const { data, error } = useSWR<EvaluacionData[]>(tableEvaluacion, fetchApiPiensa, {
+  suspense: false,
+});
+
+return(
 <>
 <Modal2/>
-
- <Table columns={columns} dataSource={data} />;
- </>
+<Table columns={columns} dataSource={data} />; 
+</>
+)
+}
 
 export default App;

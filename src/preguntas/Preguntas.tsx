@@ -4,10 +4,12 @@ import type { ColumnsType } from 'antd/es/table';
 import Modals from "./Modal"
 import Delete from "./Botondelete"
 import Secondmodal from './Modal2';
+import useSWR from 'swr';
+import {fetchApiPiensa, tablePreguntas} from "../service/apiPiensa";
 
-interface Preguntaspiensa {
-  key: string;
-  id: string;
+
+interface PreguntasData {
+  id: string | number;
   descripcion: string;
   opcionone: string;
   opciontwo: string;
@@ -17,7 +19,7 @@ interface Preguntaspiensa {
 
 }
 
-const columns: ColumnsType<Preguntaspiensa> = [
+const columns: ColumnsType<PreguntasData> = [
   {
     title: 'id',
     dataIndex: 'id',
@@ -71,7 +73,7 @@ const columns: ColumnsType<Preguntaspiensa> = [
   },
 ];
 
-const datapreguntas: Preguntaspiensa[] = [
+/*const datapreguntas: Preguntaspiensa[] = [
   {
     key: '1',
     id: '1',
@@ -133,11 +135,19 @@ const datapreguntas: Preguntaspiensa[] = [
   tipo: 'N',
 },
 ];
+*/
 
-const App: React.FC = () => 
+const App: React.FC = () => {
+  const { data, error } = useSWR<PreguntasData[]>(tablePreguntas, fetchApiPiensa, {
+    suspense: false,
+});
+
+return(
 <>
 <Secondmodal/>
 
-<Table columns={columns} dataSource={datapreguntas} />;
+<Table columns={columns} dataSource={data} />;
 </>
+);
+};
 export default App;

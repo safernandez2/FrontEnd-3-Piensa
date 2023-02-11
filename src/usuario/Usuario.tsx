@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Space, Table, Tag } from 'antd';
+import { Space, Table, Tag, Typography, Button } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import Moda from './Modal'
 import Delet from './BotonDelete';
@@ -7,25 +7,23 @@ import Secondmodal from './Modal2';
 import useSWR from 'swr';
 import {fetchApiPiensa, tableUsuario} from "../service/apiPiensa";
 import DataTable from 'react-data-table-component';
+import { PlusOutlined } from '@ant-design/icons';
+import Api from './Api';
 
 
-
-interface UsuarioData {
-  results: Array<{
-    id: number;
+export interface UsuarioData {
+    id: number | string;
     nombre: string;
     apellido:string
     edad:number
-}>;
 }
 
+export const Usuario: React.FC = () => {
 
 const columns: ColumnsType<UsuarioData> = [ 
-  
-  
   {
     title: 'id',
-    dataIndex:,
+    dataIndex:'id',
     key: 'id',
   },
   {
@@ -49,57 +47,46 @@ const columns: ColumnsType<UsuarioData> = [
     key: 'action',
     render: (_, record) => (
       <Space size="middle">
-        <a> <Moda/> </a>
-        <a>  <Delet/> </a>
+        <a>
+          <Moda/>
+        </a>
+        <a>
+          <Delet/>
+        </a>
       </Space>
     ),
   },
 ];
 
+const [editingData, setEditingData] = useState<UsuarioData | undefined>(undefined);
+const [open, setOpen] = useState(false);
+const fieldsEdit = (field: UsuarioData) => {
+    setEditingData(field)
+    setOpen(true);
+}
 
-/*const data: UsuarioData[] = [
-  
-  {
-    id: 1,
-    nombre: "Jose",
-  },
-  {
-    id: 2,
-    apellido: 'Calle',
-  },
-  {
-    id: 3,
-    nombre:  "Alex",
-    apellido: 'Torres',
-    edad: 10,
-  },
-  {
-    id: 4,
-    nombre:  "Luisa",
-    apellido: 'Quito',
-    edad: 11,
-  },
- 
-];
+const showDrawer = () => {
+  setEditingData(undefined)
+  setOpen(true);
+};
 
-
-*/
-const Usuario: React.FC = () => {
-  const { data, error } = useSWR<UsuarioData>(tableUsuario, fetchApiPiensa, {
+  const { data, error } = useSWR<UsuarioData[]>(tableUsuario, fetchApiPiensa, {
     suspense: false,
 });
   
 
    return(  
   <>
-   <Secondmodal/>
-   {data?.results.map((usuario) => (
-  <Table columns={columns}    key={usuario.id} key={usuario.nombre} key={usuario.apellido}  key={usuario.edad}></Table>/>
-  ))}
-
+  <Secondmodal/>
+  {/*<AntDrawer open={open} setOpen={setOpen} fields={editingData}></AntDrawer>
+  <Button type="primary" icon={<PlusOutlined />}  onClick={showDrawer} >
+                    Agregar usuario
+                </Button>*/}
+  <Table columns={columns} dataSource={data}></Table>
   </>
 
  );
 };
 
-export default Usuario;
+
+

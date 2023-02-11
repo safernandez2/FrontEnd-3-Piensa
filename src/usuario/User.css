@@ -1,0 +1,18 @@
+button.ant-btn.css-dev-only-do-not-override-ixblex.ant-btn-default:hover{
+    background-color:red;
+    color: white;
+}
+
+
+button.botsave {
+    position: relative;
+    width: 77px;
+    background-color: midnightblue;
+    top: 7px;
+}
+
+input.datauser{
+    padding: 7px;
+    padding-right: 100px;
+    margin-top: 10px;
+}

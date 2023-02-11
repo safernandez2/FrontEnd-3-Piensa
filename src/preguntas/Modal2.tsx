@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal } from 'antd';
 import Addpregunta from "./Addpregunta"
+import Apipre from './Apipreguntas';
 
 const Secondmodal: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -23,7 +24,7 @@ const Secondmodal: React.FC = () => {
         Agregar pregunta
       </Button>
       <Modal title="Ingrese los datos para agregar la pregunta" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-        <Addpregunta/>
+        <Apipre/>
       </Modal>
     </>
   );

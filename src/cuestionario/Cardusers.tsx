@@ -1,11 +1,21 @@
 import React from 'react';
 import { Card } from 'antd';
 import { Select, Space } from 'antd';
+import {fetchApiPiensa, tableUsuario} from "../service/apiPiensa";
+
+interface UsuarioData {
+  id: number | string;
+  nombre: string;
+  apellido:string
+  edad:number
+}
+
+
 const handleChange = (value: string) => {
     console.log(`selected ${value}`);
   };
 
-const Selectedusuario: React.FC = () => (
+const Selectedusuario: React.FC = () => ( 
   <div className="site-card-border-less-wrapper">
     <Card title="Selecciona tu nombre" bordered={false} style={{ width: 351 , height:120}}>
     <Space wrap>
@@ -19,8 +29,6 @@ const Selectedusuario: React.FC = () => (
         { value: 'Alex Torres', label: 'Alex Torres' },
         { value: 'Luisa Quito', label: 'Luisa Quito' },
         { value: 'Tatiana Farez', label: 'Tatiana Farez' },
-        { value: 'Antony Ezpinoza', label: 'Antony Ezpinoza' },
-
       ]}
     />
   </Space>
