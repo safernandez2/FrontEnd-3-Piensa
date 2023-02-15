@@ -8,7 +8,7 @@ interface Props {
   };
 }
 
-const DataRow: React.FC<Props> = ({ id, data }) => {
+const DataRowButton: React.FC<Props> = ({ id, data }) => {
   const [editMode, setEditMode] = useState(false);
   const [newData, setNewData] = useState(data);
 
@@ -54,4 +54,4 @@ const DataRow: React.FC<Props> = ({ id, data }) => {
   );
 };
 
-export default DataRow;
+export default DataRowButton;

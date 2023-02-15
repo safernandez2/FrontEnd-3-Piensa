@@ -20,7 +20,7 @@ export interface UsuarioData {
 
 export const Usuario: React.FC = () => {
 
-const columns: ColumnsType<UsuarioData> = [ 
+const columns: ColumnsType<UsuarioData> = [
   {
     title: 'id',
     dataIndex:'id',
@@ -40,7 +40,7 @@ const columns: ColumnsType<UsuarioData> = [
     title: 'Edad',
     key: 'edad',
     dataIndex: 'edad',
-    
+
   },
   {
     title: 'Action',
@@ -51,7 +51,7 @@ const columns: ColumnsType<UsuarioData> = [
           <Moda/>
         </a>
         <a>
-          <Delet/>
+          <Delet data={record}/>
         </a>
       </Space>
     ),
@@ -73,9 +73,9 @@ const showDrawer = () => {
   const { data, error } = useSWR<UsuarioData[]>(tableUsuario, fetchApiPiensa, {
     suspense: false,
 });
-  
 
-   return(  
+
+   return(
   <>
   <Secondmodal/>
   {/*<AntDrawer open={open} setOpen={setOpen} fields={editingData}></AntDrawer>
